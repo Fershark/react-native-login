@@ -5,8 +5,7 @@ import authReducer, {logout, login, AuthState} from './AuthSlice';
 import AuthService from '../services/AuthService';
 
 jest.mock('../services/AuthService');
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+const mockStore = configureMockStore([thunk]);
 const initialState: AuthState = {
   status: 'idle',
   auth: null,
@@ -28,7 +27,12 @@ describe('auth reducer', () => {
   });
 
   it('should handle login request', () => {
-    expect(authReducer(initialState, {type: login.pending.type})).toEqual({
+    expect(
+      authReducer(
+        {...initialState, error: {message: 'Error'}},
+        {type: login.pending.type},
+      ),
+    ).toEqual({
       ...initialState,
       status: 'loading',
     });
@@ -45,7 +49,6 @@ describe('auth reducer', () => {
       ),
     ).toEqual({
       ...initialState,
-      status: 'idle',
       auth: expectedAuth,
     });
   });

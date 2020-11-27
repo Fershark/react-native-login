@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import store from './redux';
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +15,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen
             name="login"
-            component={() => <></>}
+            component={LoginScreen}
             options={{title: 'Log in'}}
           />
         </Stack.Navigator>
