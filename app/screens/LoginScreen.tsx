@@ -39,6 +39,7 @@ const LoginScreen = () => {
       <View style={styles.marginBottom}>
         <Input
           label="Email address"
+          testID="email"
           onChangeText={(text) => setEmail(text)}
           value={email}
           autoFocus={true}
@@ -51,6 +52,7 @@ const LoginScreen = () => {
       <View style={styles.marginBottom}>
         <Input
           label="Password"
+          testID="password"
           onChangeText={(text) => setPassword(text)}
           value={password}
           secureTextEntry={true}
@@ -59,11 +61,11 @@ const LoginScreen = () => {
         />
       </View>
       <Button
-        style={styles.marginBottom}
+        title="Submit"
+        testID="submit"
         loading={status === 'loading'}
         disabled={status === 'loading'}
         onPress={() => submit()}
-        title="Submit"
       />
     </ScrollView>
   );

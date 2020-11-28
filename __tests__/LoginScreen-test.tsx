@@ -4,13 +4,6 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import LoginScreen from '../app/screens/LoginScreen';
 
-const store = {
-  auth: {
-    status: 'idle',
-    auth: null,
-    error: null,
-  },
-};
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
   useSelector: jest.fn(),
@@ -33,25 +26,18 @@ describe('LoginScreen', () => {
   });
 
   it('given filled fields it should submit', () => {
-    const {getByPlaceholderText, getByText} = render(<LoginScreen />);
-
-    fireEvent.changeText(
-      getByPlaceholderText('Email address'),
-      'email@gmail.com',
-    );
-    fireEvent.changeText(getByPlaceholderText('Password'), '123456');
-
-    fireEvent.press(getByText('Submit'));
+    const {queryByTestId} = render(<LoginScreen />);
+    fireEvent.changeText(queryByTestId('email'), 'email@gmail.com');
+    fireEvent.changeText(queryByTestId('password'), '123456');
+    fireEvent.press(queryByTestId('submit'));
     expect(mockDispatch).toHaveBeenCalled();
   });
 
   it("given empty fields it shouldn't submit", () => {
-    const {getByPlaceholderText, getByText} = render(<LoginScreen />);
-
-    fireEvent.changeText(getByPlaceholderText('Email address'), '');
-    fireEvent.changeText(getByPlaceholderText('Password'), '');
-
-    fireEvent.press(getByText('Submit'));
+    const {queryByTestId} = render(<LoginScreen />);
+    fireEvent.changeText(queryByTestId('email'), '');
+    fireEvent.changeText(queryByTestId('password'), '');
+    fireEvent.press(queryByTestId('submit'));
     expect(mockDispatch).toHaveBeenCalledTimes(0);
   });
 });
