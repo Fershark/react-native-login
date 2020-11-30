@@ -35,7 +35,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.contentContainer}>
+    <ScrollView contentContainerStyle={styles.contentContainer} testID="loginScreen">
       <View style={styles.marginBottom}>
         <Input
           label="Email address"

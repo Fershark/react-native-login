@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:start": "react-native start RN_SRC_EXT=e2e.ts",
+    "test:e2e:android": "detox test -c android.emu.debug",
+    "test:e2e:ios": "detox test -c ios.sim.debug",
+    "build:e2e:android": "detox build -c android.emu.debug",
+    "build:e2e:ios": "detox build -c ios.sim.debug"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
@@ -32,8 +37,10 @@
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
     "@testing-library/react-native": "^7.1.0",
+    "@types/detox": "^16.4.2",
     "@types/jest": "^26.0.15",
     "babel-jest": "^25.1.0",
+    "detox": "^17.13.2",
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
@@ -45,5 +52,27 @@
     "setupFiles": [
       "<rootDir>/jest/setup.js"
     ]
+  },
+  "detox": {
+    "testRunner": "jest",
+    "runnerConfig": "e2e/config.json",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/reactNativeLogin.app",
+        "build": "RN_SRC_EXT=e2e.ts xcodebuild -workspace ios/reactNativeLogin.xcworkspace -scheme reactNativeLogin -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11 Pro"
+        }
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "cd android && ./gradlew clean && RN_SRC_EXT=e2e.ts ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Nexus_5X_API_29"
+        }
+      }
+    }
   }
 }

@@ -16,7 +16,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.contentContainer}>
+    <ScrollView contentContainerStyle={styles.contentContainer} testID="homeScreen">
       <Text h4 testID="authName">
         Name: {auth?.first_name} {auth?.last_name}
       </Text>
