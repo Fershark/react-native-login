@@ -9,9 +9,9 @@
 - E2E testing with [Detox](https://github.com/wix/Detox).
 
 <p align="center">
-  <img width=300 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot1.png?raw=true"/>
-  <img width=300 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot2.png?raw=true"/>
-  <img width=300 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot3.png?raw=true"/>
+  <img width=200 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot1.png?raw=true"/>
+  <img width=200 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot2.png?raw=true"/>
+  <img width=200 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot3.png?raw=true"/>
 </p>
 
 ## Set up
