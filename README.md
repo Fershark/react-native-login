@@ -8,9 +8,11 @@
 - Redux Reducers and Async Action unit testing with [Jest](https://jestjs.io/).
 - E2E testing with [Detox](https://github.com/wix/Detox).
 
-<img width=350 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot1.png?raw=true"/>
-<img width=350 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot2.png?raw=true"/>
-<img width=350 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot3.png?raw=true"/>
+<p align="center">
+  <img width=300 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot1.png?raw=true"/>
+  <img width=300 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot2.png?raw=true"/>
+  <img width=300 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/ScreenShot3.png?raw=true"/>
+</p>
 
 ## Set up
 1. [React Native CLI](https://reactnative.dev/docs/environment-setup)
@@ -28,7 +30,7 @@
 #### Unit Testing
 
 <p align="center">
-	<img width=400 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/UnitTesting.png?raw=true"/>
+	<img width=800 src="https://raw.githubusercontent.com/Fershark/react-native-login/main/demo/UnitTesting.png?raw=true"/>
 </p>
 
 #### E2E testing iOS
