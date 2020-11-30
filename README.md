@@ -77,6 +77,46 @@ test:e2e:android
 
 ## More information
 
+### Folder structure
+
+```
+react-app-login
+├── app
+│   ├── App.tsx
+│   ├── models
+│   ├── redux
+│   ├── screens
+│   ├── services
+├── ___tests___
+├── e2e
+├── jest
+├── demo
+├── android
+├── ios
+├── index.js
+└── package.json
+```
+
+#### app directory
+**App.tsx** The main App component.
+
+**models** This is where the app models are stored.
+
+**redux** Directory with Redux slices and Redux configuration.
+
+**screens** This is where the screens components are stored.
+
+**services** Here are the API services and the HTTP configuration.
+
+#### \_\_tests__ directory
+This is where the components tests are saved.
+
+#### e2e directory
+Here are the end to end testing files.
+
+#### jest directory
+This is were jest configurations are stored.
+
 ### Available Scripts
 ```test```
 
@@ -84,7 +124,7 @@ Runs the app unit tests with Jest.
 
 ```test:start```
 
-It starts metro replacing the '.ts' files with '.e2e.ts' files for Detox file mocking.
+Starts metro replacing the '.ts' files with '.e2e.ts' files for Detox file mocking.
 
 ```build:e2e:android```
 
@@ -95,7 +135,9 @@ Builds the Detox Android project.
 Builds the Detox iOS project.
 
 ```test:e2e:android```
+
 Runs the Detox tests in android emulator.
 
 ```test:e2e:ios```
+
 Runs the iOS tests in iOS simulator.
